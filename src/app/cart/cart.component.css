@@ -1,0 +1,32 @@
+
+main {
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+  overflow: hidden;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid;
+  }
+  
+  .remove-btn.btn-outline {
+    color: #f44336;
+    border-color: #f44336;
+  }
+  
+  .remove-btn.btn-outline:hover {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  .checkout-btn.btn-outline {
+    color: #4caf50;
+    border-color: #4caf50;
+  }
+  
+  .checkout-btn.btn-outline:hover {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
