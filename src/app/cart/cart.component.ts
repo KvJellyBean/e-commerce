@@ -14,9 +14,14 @@ export class CartComponent {
     name: 'Product Name',
     price: 'Product Price',
     description: 'Product Description',
-    image: 'Product Image URL'
+    image: 'Product Image URL',
+    totalItems: 'Total Number of Items',
+    totalPrice: 'Total Price',
   };
 
+  purchaseHistory = [
+
+  ].slice(-5);
   removeFromCart() {
     // Implement the logic to remove an item from the cart
   }

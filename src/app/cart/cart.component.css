@@ -1,11 +1,10 @@
-
 main {
-  padding-top: 7rem;
-  padding-bottom: 3rem;
-  overflow: hidden;
-}
-
-.btn-outline {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+    overflow: hidden;
+  }
+  
+  .btn-outline {
     background-color: transparent;
     border: 1px solid;
   }
@@ -28,5 +27,39 @@ main {
   .checkout-btn.btn-outline:hover {
     background-color: #4caf50;
     color: #fff;
+  }
+  
+  .purchase-history-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+  }
+  
+.historyText{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #000; 
+    width: 90%; 
+    margin: 0 auto; 
+}
+
+.purchase-item{
+    padding-top: 1rem;
+}
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
