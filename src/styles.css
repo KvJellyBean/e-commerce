@@ -12,6 +12,7 @@ body {
   font-family: "Montserrat", "Franklin Gothic Medium", Arial, sans-serif;
   text-rendering: optimizeLegibility !important;
   width: 100%;
+  background-color: #fafafa;
 }
 
 body,
