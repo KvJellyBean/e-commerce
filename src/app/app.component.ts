@@ -1,13 +1,15 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { HeaderComponent } from "./header/header.component";
+import { MainpageComponent } from "./mainpage/mainpage.component";
 
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet, NgbModule], // Import NgbModule here
+  imports: [RouterOutlet, NgbModule, HeaderComponent, MainpageComponent],
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"], // Use styleUrls for consistency
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
   title = "E-Commerce";
