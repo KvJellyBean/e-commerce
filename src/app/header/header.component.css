@@ -1,0 +1,61 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 1.5rem 5rem;
+  background: #e3e6f3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
+  .container {
+    .navbar-brand {
+      font-size: 2rem;
+      font-weight: bold;
+      font-style: italic;
+      color: black;
+    }
+
+    & button {
+      outline: none;
+      border: none;
+    }
+
+    & nav {
+      .nav-item {
+        position: relative;
+      }
+
+      .nav-link {
+        color: black;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: green;
+        font-weight: 600;
+      }
+
+      .nav-link::after {
+        content: "";
+        width: 0;
+        height: 0.1rem;
+        background-color: green;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
