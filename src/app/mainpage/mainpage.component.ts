@@ -15,6 +15,13 @@ export class MainpageComponent {
     "./assets/slides/slide3.png",
   ];
 
+  brands = [
+    "./assets/brands/nike.png",
+    "./assets/brands/adidas.png",
+    "./assets/brands/rebook.png",
+    "./assets/brands/vans.png",
+  ];
+
   constructor(config: NgbCarouselConfig) {
     config.interval = 5000;
     config.wrap = true;
