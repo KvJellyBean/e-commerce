@@ -1,10 +1,18 @@
 import { Component } from "@angular/core";
 import { NgbModule, NgbCarouselConfig } from "@ng-bootstrap/ng-bootstrap";
+import { PartnerComponent } from "./partner/partner.component";
+import { FeedbackComponent } from "./feedback/feedback.component";
+import { HotProductComponent } from "./hot-product/hot-product.component";
 
 @Component({
   selector: "app-mainpage",
   standalone: true,
-  imports: [NgbModule],
+  imports: [
+    NgbModule,
+    HotProductComponent,
+    FeedbackComponent,
+    PartnerComponent,
+  ],
   templateUrl: "./mainpage.component.html",
   styleUrl: "./mainpage.component.css",
 })

@@ -6,11 +6,11 @@
   box-sizing: border-box;
 }
 
+/* Carousel */
 ngb-carousel {
   padding-top: 6rem;
   padding-bottom: 3rem;
   overflow: hidden;
-  max-height: 100dvh;
 
   .slide {
     padding: 5% 10%;
@@ -37,7 +37,7 @@ ngb-carousel {
       & p {
         text-align: justify;
         font-size: 1.25rem;
-        color: rgb(71, 71, 71);
+        color: rgb(129, 129, 129);
       }
 
       .btn {
@@ -79,6 +79,7 @@ ngb-carousel {
 ::ng-deep .carousel-control-next-icon {
   filter: invert(1);
 }
+
 /* Keyframes */
 @keyframes slideContent {
   0% {
@@ -98,6 +99,7 @@ ngb-carousel {
   }
 }
 
+/* Media Queries */
 @media screen and (min-width: 1025px) {
   ngb-carousel {
     padding-inline: 15%;
@@ -111,5 +113,47 @@ ngb-carousel {
 @media screen and (max-width: 1024px) {
   ngb-carousel {
     padding-inline: 0%;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  ngb-carousel {
+    .slide {
+      gap: 2.5rem;
+      padding: 5% 15%;
+
+      .content {
+        & h2,
+        span {
+          text-align: center;
+        }
+
+        & p {
+          font-size: 1rem;
+        }
+
+        .btn {
+          width: 100%;
+          margin-top: 0;
+          font-size: 1rem;
+          color: white;
+          background-color: green;
+          cursor: pointer;
+          padding: 0.25rem;
+        }
+
+        .btn:hover {
+          color: green;
+          border: 0.2rem solid green;
+          background-color: transparent;
+        }
+      }
+
+      .picsum-img-wrapper {
+        & img {
+          right: 0rem;
+        }
+      }
+    }
   }
 }
