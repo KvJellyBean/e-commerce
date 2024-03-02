@@ -1,0 +1,83 @@
+<body>
+    <div class="loginregis">
+        <span class="close"><i class="fa-solid bi-x"></i></span>
+        <div class="form-login">
+            <h2>Login</h2>
+            <form action="#" method="post">
+                <div class="form-input">
+                    <span class="icon"><i class="fa-solid bi-envelope"></i></span>
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="form-input">
+                    <span class="toggle-password" (click)="togglePassword('loginPassword', 'icon0')"><i id="icon0" class="fa-solid bi-eye-slash"></i></span>
+                    <input type="password" name="password" id="loginPassword">
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" name = "remember">Remember me  </label>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <a href="#" class="register-link">Don't have an account?</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-regis">
+            <h2>Registration</h2>
+            <form action="#" method="post" (submit)="validateForm()">
+                <div class="form-input">
+                    <span class="icon"><i class="fa-solid bi-person"></i></span>
+                    <input type="text" name="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="form-input">
+                    <span class="icon"><i class="fa-solid bi-envelope"></i></span>
+                    <input type="email" name="email" id="regisEmail" required>
+                    <label class="labelEmail">Email</label>
+                </div>
+                <div id="bbs1" class="form-input">
+                    <span class="toggle-password" (click)="togglePassword('password', 'icon1')"><i id="icon1" class="fa-solid bi-eye-slash"></i></span>
+                    <input type="password" id="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="form-input">
+                    <span class="toggle-password" (click)="togglePassword('cpassword', 'icon2')"><i id="icon2" class="fa-solid bi-eye-slash"></i></span>
+                    <input type="password" id="cpassword" name="cpassword" required>
+                    <label>Confirm Password</label>
+                    
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to the terms & conditions</label>
+                    
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <a href="#" class="login-link">Already have an account?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <section class="account d-flex">
+        <div class="left bg-danger w-50 h-100 d-flex justify-content-center align-items-center">
+            <div class="row">
+                <div class="col-6">
+                    <h1 class="text-capitalize">welcome back</h1>
+                    <button class="popup-login">Account</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="right bg-primary w-50 h-100">
+            <img src="../../assets/slides/slide1.png" alt="" class="w-100 h-100 object-fit-cover">
+         
+        </div>
+
+    </section>            
+    
+ </body>  
+  
+    
