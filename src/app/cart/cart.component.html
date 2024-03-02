@@ -1,0 +1,98 @@
+<main>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Your Cart</h2>
+        <span class="totalItems">Total Items: {{product.totalItems}}</span>
+        
+    <div class="cart-item mb-4">
+    <div class="row align-items-center justify-content-center">
+
+        <!-- Product Section   -->
+        <div class="col-md-6">
+        <div class="content">
+            <h3 class="product-name">Product Name</h3><br>
+            <span class="product-price">Product Price</span>
+            <p class="product-description">Product Description</p>
+            <button class="btn remove-btn btn-outline">Remove</button>
+            
+        </div>
+        </div>
+        <!-- End of product section -->
+
+        <!-- Product Picture Section -->
+        <div class="col-md-6">
+            <div class="picsum-img-wrapper">
+            <img src="./assets/amber.jpg" alt="Product Name"/>
+            </div>
+        </div>
+        <!-- End of picture section -->
+
+        <!-- Product Section   -->
+        <div class="col-md-6">
+        <div class="content">
+            <h3 class="product-name">Product Name</h3><br>
+            <span class="product-price">Product Price</span>
+            <p class="product-description">Product Description</p>
+            <button class="btn remove-btn btn-outline">Remove</button>
+            </div>
+        </div>
+        
+        <!-- End of picture section -->
+            
+        <!-- Product Picture Section -->
+        <div class="col-md-6">
+        <div class="picsum-img-wrapper">
+            <img src="./assets/amber.jpg" alt="Product Name" />
+            </div>
+        </div>
+        <!-- End of picture section -->
+
+        </div>
+    </div>
+
+    <!-- Price and Chechkout Section -->
+    <div class="text-center">
+        <span class="totalPrice">Total Price: {{product.totalPrice}} </span>
+        <button class="btn checkout-btn btn-outline">Checkout</button>
+    </div>
+    <!-- End of Price and Chechkout section -->
+
+    <!-- Purchase History Section -->
+    <div class="purchase-history-section text-center">
+        <br>
+        <h4 class="historyText">Purchase History</h4>
+        <div class="swiper-container d-flex">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+            <div class="purchase-item">
+                <img src="./assets/amber.jpg" alt="Product Name" class="purchase-image" />
+                <div class="purchase-details">
+                <span class="purchase-name">Product Name</span><br>
+                <span class="purchase-price">Product Price</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- End of purchase item -->
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+            <div class="purchase-item">
+                <img src="./assets/amber.jpg" alt="Product Name" class="purchase-image" />
+                <div class="purchase-details">
+                <span class="purchase-name">Product Name</span><br>
+                <span class="purchase-price">Product Price</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- End of purchase item -->
+
+        <div class="swiper-pagination"></div>
+        </div>
+        
+
+    </div>
+    </div>
+</main>
