@@ -15,13 +15,6 @@ export class CartComponent implements OnInit {
   totalItems: number = 0; // Initialize totalItems to 0
   totalPrice: number = 0; // Initialize totalPrice to 0
 
-  product: Product = {
-    name: 'Product Name',
-    price: 'Product Price',
-    description: 'Product Description',
-    image: 'Product Image URL',
-  };
-
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -58,6 +51,10 @@ export class CartComponent implements OnInit {
   getTotalItems() {
     return this.cart.length;
   }
+
+  getTotalPrice() {
+    return this.cartService.updateTotals().totalPrice;
+}
 
   purchaseHistory: Product[] = [].slice(-5);
 }

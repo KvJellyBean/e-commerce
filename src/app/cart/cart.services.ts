@@ -43,9 +43,13 @@ updateTotals() {
 
     this.totalItems = totalItems;
     this.totalPrice = totalPrice;
+
+    return { totalItems, totalPrice };
 }
 
     getCart() {
+        console.log(this.cart);
+        
         return this.cart;
 }
 

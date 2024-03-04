@@ -1,7 +1,7 @@
 <main>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Your Cart</h2>
-        <span class="totalItems">Total Items: {{product.totalItems}}</span>
+        <span class="totalItems">Total Items: {{getTotalItems()}}</span>
         
     <div class="cart-item mb-4" *ngFor="let product of cart; let i = index">
     <div class="row align-items-center justify-content-center">
@@ -31,7 +31,7 @@
 
     <!-- Price and Chechkout Section -->
     <div class="text-center">
-        <span class="totalPrice">Total Price: {{product.totalPrice}} </span>
+        <span class="totalPrice">Total Price: {{getTotalPrice()}} </span>
         <button class="btn checkout-btn btn-outline" (click)="checkout()">Checkout</button>
     </div>
     <!-- End of Price and Chechkout section -->
