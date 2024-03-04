@@ -6,6 +6,8 @@ import { MainpageComponent } from "./mainpage/mainpage.component";
 import { FooterComponent } from "./footer/footer.component";
 import { LoginComponent } from "./login/login.component";
 import { CartComponent } from "./cart/cart.component";
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: "app-root",
@@ -19,9 +21,12 @@ import { CartComponent } from "./cart/cart.component";
         MainpageComponent,
         FooterComponent,
         LoginComponent,
-        CartComponent
+        CartComponent,
+        RouterModule
+        
     ]
 })
+
 export class AppComponent {
   title = "E-Commerce";
 }

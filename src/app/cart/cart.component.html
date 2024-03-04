@@ -3,16 +3,16 @@
         <h2 class="text-center mb-4">Your Cart</h2>
         <span class="totalItems">Total Items: {{product.totalItems}}</span>
         
-    <div class="cart-item mb-4">
+    <div class="cart-item mb-4" *ngFor="let product of cart; let i = index">
     <div class="row align-items-center justify-content-center">
 
         <!-- Product Section   -->
         <div class="col-md-6">
         <div class="content">
-            <h3 class="product-name">Product Name</h3><br>
-            <span class="product-price">Product Price</span>
-            <p class="product-description">Product Description</p>
-            <button class="btn remove-btn btn-outline">Remove</button>
+            <h3 class="product-name">{{product.name}}</h3><br>
+            <span class="product-price">{{product.price}}</span>
+            <p class="product-description">{{product.description}}</p>
+            <button class="btn remove-btn btn-outline" (click)="removeFromCart(i)">Remove</button>
             
         </div>
         </div>
@@ -21,27 +21,7 @@
         <!-- Product Picture Section -->
         <div class="col-md-6">
             <div class="picsum-img-wrapper">
-            <img src="./assets/amber.jpg" alt="Product Name"/>
-            </div>
-        </div>
-        <!-- End of picture section -->
-
-        <!-- Product Section   -->
-        <div class="col-md-6">
-        <div class="content">
-            <h3 class="product-name">Product Name</h3><br>
-            <span class="product-price">Product Price</span>
-            <p class="product-description">Product Description</p>
-            <button class="btn remove-btn btn-outline">Remove</button>
-            </div>
-        </div>
-        
-        <!-- End of picture section -->
-            
-        <!-- Product Picture Section -->
-        <div class="col-md-6">
-        <div class="picsum-img-wrapper">
-            <img src="./assets/amber.jpg" alt="Product Name" />
+            <img [src]="product.image" alt="{{product.name}}"/>
             </div>
         </div>
         <!-- End of picture section -->
@@ -52,7 +32,7 @@
     <!-- Price and Chechkout Section -->
     <div class="text-center">
         <span class="totalPrice">Total Price: {{product.totalPrice}} </span>
-        <button class="btn checkout-btn btn-outline">Checkout</button>
+        <button class="btn checkout-btn btn-outline" (click)="checkout()">Checkout</button>
     </div>
     <!-- End of Price and Chechkout section -->
 

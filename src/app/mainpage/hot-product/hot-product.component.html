@@ -10,7 +10,7 @@
   >
     <!-- Product card -->
     <div class="col">
-      <div class="card">
+      <div class="card" *ngIf="products[0] as product">
         <!-- Product image -->
         <div class="img-container container">
           <img
@@ -24,7 +24,7 @@
         <div class="card-body text-center pt-4">
           <!-- Product name -->
           <h4 href="#" class="h4 text-primary text-decoration-none">
-            Product name
+            {{product.name}}
           </h4>
           <!-- Product raiting -->
           <div class="d-flex justify-content-center small text-warning my-2">
@@ -36,7 +36,7 @@
           </div>
           <!-- Product price -->
           <div class="product-price">
-            <span class="price fw-bold ms-2">$18.55</span>
+            <span class="price fw-bold ms-2">{{product.price}}</span>
           </div>
         </div>
 
@@ -47,6 +47,7 @@
               class="btn btn-outline-dark mt-auto px-4 py-2"
               href="#"
               role="button"
+              (click)="addProductToCart(product)"
               ><span class="bi bi-cart4"></span> Add to cart</a
             >
           </div>
@@ -55,12 +56,12 @@
     </div>
 
     <div class="col">
-      <div class="card">
+      <div class="card" *ngIf="products[1] as product">
         <!-- Product image -->
         <div class="img-container container">
           <img
             class="card-img-top p-5 p-md-3"
-            src="{{ images[1] }}"
+            [src]="product.image"
             alt="Shoes"
           />
         </div>
@@ -69,7 +70,7 @@
         <div class="card-body text-center pt-4">
           <!-- Product name -->
           <h4 href="#" class="h4 text-primary text-decoration-none">
-            Product name
+            {{product.name}}
           </h4>
           <!-- Product raiting -->
           <div class="d-flex justify-content-center small text-warning my-2">
@@ -81,7 +82,7 @@
           </div>
           <!-- Product price -->
           <div class="product-price">
-            <span class="price fw-bold ms-2">$18.55</span>
+            <span class="price fw-bold ms-2">{{product.price}}</span>
           </div>
         </div>
 
@@ -92,6 +93,7 @@
               class="btn btn-outline-dark mt-auto px-4 py-2"
               href="#"
               role="button"
+              (click)="addProductToCart(product)"
               ><span class="bi bi-cart4"></span> Add to cart</a
             >
           </div>
@@ -100,12 +102,12 @@
     </div>
 
     <div class="col">
-      <div class="card">
+      <div class="card" *ngIf="products[2] as product">
         <!-- Product image -->
         <div class="img-container container">
           <img
             class="card-img-top p-5 p-md-3"
-            src="{{ images[2] }}"
+            [src]="product.image"
             alt="Shoes"
           />
         </div>
@@ -114,7 +116,7 @@
         <div class="card-body text-center pt-4">
           <!-- Product name -->
           <h4 href="#" class="h4 text-primary text-decoration-none">
-            Product name
+            {{product.name}}
           </h4>
           <!-- Product raiting -->
           <div class="d-flex justify-content-center small text-warning my-2">
@@ -126,7 +128,7 @@
           </div>
           <!-- Product price -->
           <div class="product-price">
-            <span class="price fw-bold ms-2">$18.55</span>
+            <span class="price fw-bold ms-2">{{product.price}}</span>
           </div>
         </div>
 
@@ -137,6 +139,7 @@
               class="btn btn-outline-dark mt-auto px-4 py-2"
               href="#"
               role="button"
+              (click)="addProductToCart(product)"
               ><span class="bi bi-cart4"></span> Add to cart</a
             >
           </div>
