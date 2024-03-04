@@ -12,8 +12,11 @@ export interface Product {
 @Injectable({
     providedIn: 'root',
 })
+
 export class CartService {
     cart: Product[] = [];
+    totalItems: number = 0; // Initialize totalItems to 0
+    totalPrice: number = 0; // Initialize totalPrice to 0
 
 addToCart(product: Product) {
     console.log('Adding product to cart:', product);
@@ -38,7 +41,8 @@ updateTotals() {
         totalPrice += Number(product.price);
     });
 
-    return { totalItems, totalPrice };
+    this.totalItems = totalItems;
+    this.totalPrice = totalPrice;
 }
 
     getCart() {
@@ -47,5 +51,6 @@ updateTotals() {
 
     clearCart() {
         this.cart = [];
+        this.updateTotals();
 }
 }

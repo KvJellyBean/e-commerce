@@ -41,12 +41,6 @@ export class HotProductComponent {
 
   ];
 
-  images = [
-    "./assets/slides/slide1.png",
-    "./assets/slides/slide2.png",
-    "./assets/slides/slide3.png",
-  ];
-
   constructor(private cartService: CartService) {}
 
   addProductToCart(product: Product) {

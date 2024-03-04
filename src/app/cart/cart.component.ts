@@ -1,59 +1,58 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-interface Product {
-  name: string;
-  price: string;
-  description: string;
-  image: string;
-  totalItems?: number; // Optional property
-  totalPrice?: number; // Optional property
-}
+import { CartService, Product } from '../cart/cart.services';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css',
+  styleUrls: ['./cart.component.css'],
 })
 
-export class CartComponent {
+export class CartComponent implements OnInit {
+  cart: Product[] = [];
+  totalItems: number = 0; // Initialize totalItems to 0
+  totalPrice: number = 0; // Initialize totalPrice to 0
+
   product: Product = {
     name: 'Product Name',
     price: 'Product Price',
     description: 'Product Description',
     image: 'Product Image URL',
-    totalItems: 0, // Initialize totalItems to 0
-    totalPrice: 0, // Initialize totalPrice to 0
   };
 
-  cart: Product[] = [];
+  constructor(private cartService: CartService) { }
+
+  ngOnInit(): void {
+    this.cart = this.cartService.getCart();
+    this.updateTotals();
+  }
+
+  updateTotals(): void {
+    this.cartService.updateTotals();
+    this.totalItems = this.cartService.totalItems;
+    this.totalPrice = this.cartService.totalPrice;
+  }
 
   addToCart(product: Product) {
-    this.cart.push(product);
-    this.product.totalItems = this.cart.length; // Update totalItems
-    if (this.product.totalPrice !== undefined) {
-      this.product.totalPrice += Number(product.price); // Update totalPrice
-    }
+    this.cartService.addToCart(product);
+    this.cart = this.cartService.getCart(); // Update the cart after a product is added
+    this.updateTotals();
   }
 
   removeFromCart(index: number) {
-    if (index > -1) {
-      this.cart.splice(index, 1);
-      this.product.totalItems = this.cart.length; // Update totalItems
-      if (this.product.totalPrice !== undefined) {
-        this.product.totalPrice -= Number(this.cart[index].price); // Update totalPrice
-      }
-    }
+    this.cartService.removeFromCart(index);
+    this.cart = this.cartService.getCart(); // Update the cart after a product is removed
+    this.updateTotals();
   }
 
   checkout() {
     // Implement the checkout logic here
     // For example, you might want to clear the cart after checkout
-    this.cart = [];
-    this.product.totalItems = 0; // Reset totalItems
-    this.product.totalPrice = 0; // Reset totalPrice
+    this.cartService.clearCart();
+    this.cart = this.cartService.getCart(); // Update the cart after checkout
+    this.updateTotals();
   }
 
   getTotalItems() {
