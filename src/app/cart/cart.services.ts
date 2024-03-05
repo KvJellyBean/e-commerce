@@ -12,6 +12,7 @@ export interface Product {
 @Injectable({
   providedIn: "root",
 })
+
 export class CartService {
   cart: Product[] = [];
   totalItems: number = 0;
