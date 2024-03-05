@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Router, NavigationEnd } from "@angular/router";
 import { RouterOutlet } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HeaderComponent } from "./header/header.component";
@@ -27,6 +28,17 @@ import { RouterModule } from '@angular/router';
     ]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = "E-Commerce";
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
+  }
 }

@@ -1,11 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { CartService, Product } from "../cart/cart.services";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: "app-cart",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: "./cart.component.html",
   styleUrls: ["./cart.component.css"],
 })
@@ -19,6 +20,11 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cart = this.cartService.getCart();
     this.updateTotals();
+
+    const links = document.querySelectorAll<HTMLAnchorElement>("a");
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => e.preventDefault());
+    });
   }
 
   updateTotals(): void {

@@ -1,13 +1,22 @@
 <main>
   <div class="container mt-5" *ngIf="cart.length > 0; else emptyCart">
-    <h2 class="cartText text-center mb-4">Your Cart</h2>
+    <h2 class="cartText text-center text-uppercase fw-bold mb-5">Your <span style="color: lightcoral;">Cart</span></h2>
+    <hr>
 
-    <div>
-      <span class="totalItems1">Total Items: {{ getTotalItems() }}</span>
-    </div>
+  <!-- Go to Shop Button -->
+  <div class="goToShop" style="display: flex; font-weight: bold;">
+    <a class="shop-button mt-3 nav-link active"
+    routerLink="/shop" 
+    routerLinkActive="active"
+    role="button"
+    >
+      &larr; Go to Shop
+    </a>
+  </div>
 
     <div class="cart-item mb-4" *ngFor="let product of cart; let i = index">
       <div class="row align-items-center justify-content-center">
+        
         <!-- Product Section -->
         <div class="col-md-6">
           <div class="content">
@@ -69,6 +78,17 @@
     </div>
   </ng-template>
 
+  <!-- Go to Shop Button -->
+  <div class="goToShop" style="display: flex; justify-content: center; font-weight: bold;" *ngIf="cart.length == 0; ">
+    <a class="shop-button2 mt-3 nav-link active"
+    routerLink="/shop" 
+    routerLinkActive="active"
+    role="button"
+    >
+      &larr; Go to Shop
+    </a>
+  </div>
+  
   <!-- Purchase History Section -->
   <div class="purchase-history-section text-center">
     <br />

@@ -4,12 +4,56 @@ main {
   overflow: hidden;
 }
 
+hr {
+  width: 10%;
+  height: 5px;
+  border: none;
+  margin: auto;
+  margin-top: -2rem;
+  margin-bottom: 2.5rem;
+  background: red;
+}
+
+.shop-button, .shop-button2 {
+  position: relative;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.shop-button{
+  margin-left: 15rem;
+}
+
+.shop-button:hover, .shop-button2:hover {
+  color: green;
+  font-weight: 600;
+  border-radius: 5rem;
+}
+
+.shop-button::after, .shop-button2::after {
+  content: "";
+  width: 0;
+  height: 0.1rem;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.shop-button:hover::after, .shop-button2:hover::after {
+  width: 100%;
+}
+
 .cartIsEmptyText {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding-top: 11rem;
   text-align: center;
 }
 
@@ -201,3 +245,34 @@ main {
     right: 110%;
   }
 }
+
+/* @media screen and (max-width: 700px) {
+  section.account {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+    margin-top: 6rem;
+  }
+
+  .right {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  content {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  content{
+    width: 320px;
+  }
+} */
+
+/* * {
+  border: 1px solid #f44336;
+} */
