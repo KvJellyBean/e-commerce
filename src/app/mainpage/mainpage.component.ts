@@ -3,6 +3,7 @@ import { NgbModule, NgbCarouselConfig } from "@ng-bootstrap/ng-bootstrap";
 import { PartnerComponent } from "./partner/partner.component";
 import { FeedbackComponent } from "./feedback/feedback.component";
 import { HotProductComponent } from "./hot-product/hot-product.component";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: "app-mainpage",
@@ -12,6 +13,7 @@ import { HotProductComponent } from "./hot-product/hot-product.component";
     HotProductComponent,
     FeedbackComponent,
     PartnerComponent,
+    RouterLink,
   ],
   templateUrl: "./mainpage.component.html",
   styleUrl: "./mainpage.component.css",
