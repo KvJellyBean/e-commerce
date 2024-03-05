@@ -19,7 +19,6 @@ hr {
   color: black;
   text-transform: uppercase;
   text-align: center;
-  padding: 0.5rem;
   transition: all 0.3s ease;
 }
 
@@ -30,7 +29,6 @@ hr {
 .shop-button:hover, .shop-button2:hover {
   color: green;
   font-weight: 600;
-  border-radius: 5rem;
 }
 
 .shop-button::after, .shop-button2::after {
@@ -77,7 +75,6 @@ hr {
 
 .totalItems2 {
   text-align: center;
-  padding-top: 7rem;
 }
 
 .btn-outline {
@@ -247,7 +244,7 @@ hr {
 }
 
 /* @media screen and (max-width: 700px) {
-  section.account {
+  section.cart {
     flex-direction: column;
   }
 
@@ -271,8 +268,4 @@ hr {
   content{
     width: 320px;
   }
-} */
-
-/* * {
-  border: 1px solid #f44336;
 } */
