@@ -1,6 +1,8 @@
   <main>
-    <div class="container mt-5" *ngIf="cart.length > 0; else emptyCart">
-      <h2 class="cartText text-center text-uppercase fw-bold mb-5">Your <span style="color: lightcoral;">Cart</span></h2>
+    <div class="container mt-5" 
+    *ngIf="cart.length > 0; else emptyCart">
+      <h2 class="cartText text-center text-uppercase fw-bold mb-5">Your 
+        <span style="color: lightcoral;">Cart</span></h2>
       <hr>
 
     <!-- Go to Shop Button -->
@@ -59,10 +61,11 @@
       <!-- End of Price and Checkout section -->
     </div>
 
+    <!-- tumbleween animation -->
     <ng-template #emptyCart>
       <div class="cartIsEmptyText">
         <h2>Cart is empty</h2>
-        <!-- You can replace the following div with your tumbleweed animation -->
+        
         <div class="empty-icon-container">
           <div class="animation-container">
             <img
@@ -77,9 +80,11 @@
         </div>
       </div>
     </ng-template>
+    <!-- End of tumbleweed animation -->
 
     <!-- Go to Shop Button -->
-    <div class="goToShop" style="display: flex; justify-content: center; font-weight: bold;" *ngIf="cart.length == 0; ">
+    <div class="goToShop" style="display: flex; justify-content: center; font-weight: bold;" 
+    *ngIf="cart.length == 0; ">
       <a class="shop-button2 mt-3 nav-link active"
       routerLink="/shop" 
       routerLinkActive="active"
@@ -88,6 +93,7 @@
         &larr; Go to Shop
       </a>
     </div>
+    <!-- End of shop button -->
     
     <!-- Purchase History Section -->
     <div class="purchase-history-section text-center">
