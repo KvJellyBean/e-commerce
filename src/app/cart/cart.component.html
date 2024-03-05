@@ -1,78 +1,100 @@
 <main>
-    <div class="container mt-5">
-        <h2 class="text-center mb-4">Your Cart</h2>
-        <span class="totalItems">Total Items: {{getTotalItems()}}</span>
-        
-    <div class="cart-item mb-4" *ngFor="let product of cart; let i = index">
-    <div class="row align-items-center justify-content-center">
+    <div class="container mt-5" *ngIf="cart.length > 0; else emptyCart">
+        <h2 class="cartText text-center mb-4">Your Cart</h2>
+<!-- 
+        <div>
+            <span class="totalItems1">Total Items: {{getTotalItems()}}</span>
+        </div> -->
 
-        <!-- Product Section   -->
-        <div class="col-md-6">
-        <div class="content">
-            <h3 class="product-name">{{product.name}}</h3><br>
-            <span class="product-price">{{product.price}}</span>
-            <p class="product-description">{{product.description}}</p>
-            <button class="btn remove-btn btn-outline" (click)="removeFromCart(i)">Remove</button>
-            
-        </div>
-        </div>
-        <!-- End of product section -->
+        <div class="cart-item mb-4" *ngFor="let product of cart; let i = index">
+            <div class="row align-items-center justify-content-center">
 
-        <!-- Product Picture Section -->
-        <div class="col-md-6">
-            <div class="picsum-img-wrapper">
-            <img [src]="product.image" alt="{{product.name}}"/>
+                <!-- Product Section -->
+                <div class="col-md-6">
+                    <div class="content">
+                        <h3 class="product-name">{{product.name}}</h3><br>
+                        <span class="product-price">{{product.price}}</span>
+                        <p class="product-description">{{product.description}}</p>
+                        <button class="removeButton btn remove-btn btn-outline" (click)="removeFromCart(i)">Remove</button>
+                    </div>
+                </div>
+                <!-- End of product section -->
+
+                <!-- Product Picture Section -->
+                <div class="col-md-6">
+                    <div class="picsum-img-wrapper">
+                        <img [src]="product.image" alt="{{product.name}}"/>
+                    </div>
+                </div>
+                <!-- End of picture section -->
+
             </div>
         </div>
-        <!-- End of picture section -->
 
+        <!-- Price and Checkout Section -->
+        <div class="totalItems2 text-center">
+            <span class="totalItems2">Total Items: {{getTotalItems()}}</span>
         </div>
+        <div class="text-center">
+            <span class="totalPrice">Total Price: {{getTotalPrice()}} </span>
+        </div>
+        <div class="text-center">
+            <button class="btn checkout-btn btn-outline" (click)="checkout()">Checkout</button>
+        </div>
+        <!-- End of Price and Checkout section -->
+
     </div>
 
-    <!-- Price and Chechkout Section -->
-    <div class="text-center">
-        <span class="totalPrice">Total Price: {{getTotalPrice()}} </span>
-        <button class="btn checkout-btn btn-outline" (click)="checkout()">Checkout</button>
-    </div>
-    <!-- End of Price and Chechkout section -->
+    <ng-template #emptyCart>
+        <div class="cartIsEmptyText">
+            <h2>Cart is empty</h2>
+            <!-- You can replace the following div with your tumbleweed animation -->
+            <div class="empty-icon-container">
+                <div class="animation-container">
+                <img src="../../assets/tumbleweed-icon-22.jpg" alt="Product Name" class="tumbleweed">
+                <div class="pebble1"></div>
+                <div class="pebble2"></div>
+                <div class="pebble3"></div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
 
     <!-- Purchase History Section -->
     <div class="purchase-history-section text-center">
         <br>
-        <h4 class="historyText">Purchase History</h4>
+        <h3 class="historyText">Purchase History</h3>
         <div class="swiper-container d-flex">
-        <div class="swiper-wrapper">
+            <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-            <div class="purchase-item">
-                <img src="./assets/amber.jpg" alt="Product Name" class="purchase-image" />
-                <div class="purchase-details">
-                <span class="purchase-name">Product Name</span><br>
-                <span class="purchase-price">Product Price</span>
+                <div class="swiper-slide">
+                    <div class="purchase-item">
+                        <img src="./assets/amber.jpg" alt="Product Name" class="purchase-image" />
+                        <div class="purchase-details">
+                            <span class="purchase-name">Product Name</span><br>
+                            <span class="purchase-price">Product Price</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
-        <!-- End of purchase item -->
+            <!-- End of History Section -->
 
-        <div class="swiper-wrapper">
+            <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-            <div class="purchase-item">
-                <img src="./assets/amber.jpg" alt="Product Name" class="purchase-image" />
-                <div class="purchase-details">
-                <span class="purchase-name">Product Name</span><br>
-                <span class="purchase-price">Product Price</span>
+                <div class="swiper-slide">
+                    <div class="purchase-item">
+                        <img src="./assets/amber.jpg" alt="Product Name" class="purchase-image" />
+                        <div class="purchase-details">
+                            <span class="purchase-name">Product Name</span><br>
+                            <span class="purchase-price">Product Price</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
-        <!-- End of purchase item -->
+            <!-- End of purchase item -->
 
-        <div class="swiper-pagination"></div>
+            <div class="swiper-pagination"></div>
         </div>
-        
-
     </div>
-    </div>
+    <!-- End of Purchase History Section -->
 </main>
