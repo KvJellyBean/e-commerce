@@ -1,0 +1,85 @@
+<main>
+  <div class="shop container-fluid py-5 px-5">
+    <h3 class="text-center text-uppercase fw-bold mb-5">
+      <span class="text-success">All</span> Products
+    </h3>
+    <hr />
+
+    <div class="mb-5">
+      <div class="col-md-10 col-lg-8 sidebar container-fluid">
+        <div class="sidebar-box search-form-wrap">
+          <form class="search-form">
+            <div class="form-group">
+              <span class="icon bi-search"></span>
+              <input
+                type="text"
+                class="form-control"
+                id="s"
+                placeholder="Search products..."
+                (input)="searchProducts($event)"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div
+      class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-5 row-cols-xl-5 gap-4 gap-md-4 d-flex justify-content-center"
+    >
+      <!-- Product card -->
+      <div
+        class="col"
+        *ngFor="
+          let product of searchResults.length > 0 ? searchResults : products
+        "
+      >
+        <div class="card">
+          <!-- Product image -->
+          <div class="img-container container">
+            <img
+              class="card-img-top p-5 p-md-3"
+              [src]="product.image"
+              alt="Shoes"
+            />
+          </div>
+
+          <!-- Product details  p-4 -->
+          <div class="card-body text-center pt-4">
+            <!-- Product name -->
+            <h4 href="#" class="h4 text-primary text-decoration-none">
+              {{ product.name }}
+            </h4>
+            <!-- Product raiting -->
+            <div class="d-flex justify-content-center small text-warning my-2">
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-half"></div>
+            </div>
+            <!-- Product price -->
+            <div class="product-price">
+              <span class="price fw-bold ms-2">$ {{ product.price }}</span>
+            </div>
+          </div>
+
+          <!-- Product Add to cart -->
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent mt-4">
+            <div class="text-center">
+              <a
+                class="btn btn-outline-dark mt-auto px-4 py-2"
+                routerLink="/cart"
+                routerLinkActive="active"
+                role="button"
+                (click)="addProductToCart(product, $event)"
+                ><span class="bi bi-cart4"></span> Add Cart</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
