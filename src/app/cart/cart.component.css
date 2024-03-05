@@ -77,11 +77,6 @@ hr {
   text-align: center;
 }
 
-.btn-outline {
-  background-color: transparent;
-  border: 1px solid;
-}
-
 .remove-btn.btn-outline {
   color: #f44336;
   border-color: #f44336;
