@@ -16,11 +16,13 @@ export class LoginComponent implements OnInit {
     const btnpopup = document.querySelector(".popup-login");
     const iconclose = document.querySelector(".close");
 
-    registerlink?.addEventListener("click", () => {
+    registerlink?.addEventListener("click", (event) => {
+      event.preventDefault();
       loginregis?.classList.add("active");
     });
 
-    loginlink?.addEventListener("click", () => {
+    loginlink?.addEventListener("click", (event) => {
+      event.preventDefault();
       loginregis?.classList.remove("active");
     });
 
