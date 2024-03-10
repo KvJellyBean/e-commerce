@@ -69,10 +69,6 @@ hr {
   padding-left: 15rem;
 }
 
-/* .removeButton.btn-outline {
-  margin-left: 1rem;
-} */
-
 .totalItems2 {
   text-align: center;
 }
@@ -238,8 +234,6 @@ hr {
     right: 110%;
   }
 }
-
-/* Responsive design modifications */
 
 @media (max-width: 600px) {
   main {
