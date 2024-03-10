@@ -69,9 +69,9 @@ hr {
   padding-left: 15rem;
 }
 
-.removeButton.btn-outline {
-  margin-left: 15rem;
-}
+/* .removeButton.btn-outline {
+  margin-left: 1rem;
+} */
 
 .totalItems2 {
   text-align: center;
@@ -239,29 +239,76 @@ hr {
   }
 }
 
-/* @media screen and (max-width: 700px) {
-  section.cart {
-    flex-direction: column;
+/* Responsive design modifications */
+
+@media (max-width: 600px) {
+  main {
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
   }
 
-  .left {
-    width: 100%;
-    margin-top: 6rem;
+  .shop-button, .shop-button2 {
+    margin-left: 1rem;
   }
 
-  .right {
-    width: 100%;
+  .product-name, .product-price, .product-description {
+    padding-left: 1rem;
+  }
+
+  .removeButton.btn-outline {
+    margin-left: 1rem;
+  }
+
+  .picsum-img-wrapper img {
+    padding-top: 2rem;
+    width: 70%;
   }
 }
 
-@media screen and (max-width: 375px) {
-  content {
-    width: 350px;
+@media (min-width: 601px) and (max-width: 1024px) {
+  main {
+    padding-top: 4.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .shop-button {
+    margin-left: 2rem;
+  }
+
+  .product-name, .product-price, .product-description {
+    padding-left: 2rem;
+  }
+
+  .removeButton.btn-outline {
+    margin-left: 2rem;
+  }
+
+  .picsum-img-wrapper img {
+    padding-top: 3rem;
+    width: 50%;
   }
 }
 
-@media screen and (max-width: 320px) {
-  content{
-    width: 320px;
+@media (min-width: 1025px) {
+  main {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
   }
-} */
+
+  .shop-button {
+    margin-left: 15rem;
+  }
+
+  .product-name, .product-price, .product-description {
+    padding-left: 15rem;
+  }
+
+  .removeButton.btn-outline {
+    margin-left: 15rem;
+  }
+
+  .picsum-img-wrapper img {
+    padding-top: 4rem;
+    width: 35%;
+  }
+}
